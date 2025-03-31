@@ -1,11 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Clock, Video, User, Search, Flask, Bell, AlertTriangle } from 'lucide-react';
+import { Calendar, Clock, Video, User, Search, Vial, Bell, AlertTriangle } from 'lucide-react';
 import { db } from '@/lib/firebase';
 import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
 import LoadingSpinner from '@/components/LoadingSpinner';
@@ -67,7 +66,7 @@ const Dashboard = () => {
       link: '/blood-seeking',
     },
     {
-      icon: <Flask className="h-8 w-8 text-green-500" />,
+      icon: <Vial className="h-8 w-8 text-green-500" />,
       title: 'Lab Tests',
       description: 'Book diagnostic tests and get reports online from trusted labs.',
       link: '/lab-centers',
@@ -219,7 +218,7 @@ const Dashboard = () => {
                     View Medical History
                   </Button>
                   <Button variant="outline" className="w-full justify-start">
-                    <Flask className="h-4 w-4 mr-2" />
+                    <Vial className="h-4 w-4 mr-2" />
                     Order Medicines
                   </Button>
                   <Button variant="outline" className="w-full justify-start">
