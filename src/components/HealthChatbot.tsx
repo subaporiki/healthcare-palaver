@@ -46,7 +46,7 @@ const steps = [
   },
   {
     id: 'symptomsResponse',
-    message: 'Based on what you've described, it might be helpful to consult with a doctor. Would you like me to help you find a specialist?',
+    message: "Based on what you've described, it might be helpful to consult with a doctor. Would you like me to help you find a specialist?",
     trigger: 'findDoctor',
   },
   {
@@ -197,7 +197,7 @@ const steps = [
   },
   {
     id: 'healthAnswer',
-    message: 'Thank you for your question. While I can provide general information, it's always best to consult with a healthcare professional for personalized advice. Would you like to speak with one of our doctors?',
+    message: "Thank you for your question. While I can provide general information, it's always best to consult with a healthcare professional for personalized advice. Would you like to speak with one of our doctors?",
     trigger: 'connectDoctorOptions',
   },
   {
