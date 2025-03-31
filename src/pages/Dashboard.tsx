@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Clock, Video, User, Search, Vial, Bell, AlertTriangle } from 'lucide-react';
+import { Calendar, Clock, Video, User, Search, TestTube, Bell, AlertTriangle } from 'lucide-react';
 import { db } from '@/lib/firebase';
 import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
 import LoadingSpinner from '@/components/LoadingSpinner';
@@ -66,7 +66,7 @@ const Dashboard = () => {
       link: '/blood-seeking',
     },
     {
-      icon: <Vial className="h-8 w-8 text-green-500" />,
+      icon: <TestTube className="h-8 w-8 text-green-500" />,
       title: 'Lab Tests',
       description: 'Book diagnostic tests and get reports online from trusted labs.',
       link: '/lab-centers',
@@ -82,7 +82,6 @@ const Dashboard = () => {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Welcome Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
             Welcome{userDetails ? `, ${userDetails.fullName}` : ''}!
@@ -90,7 +89,6 @@ const Dashboard = () => {
           <p className="text-gray-600 mt-1">Here's an overview of your health dashboard</p>
         </div>
 
-        {/* Quick Actions */}
         <section className="mb-10">
           <h2 className="text-xl font-semibold mb-4 text-gray-800">Quick Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -111,7 +109,6 @@ const Dashboard = () => {
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Upcoming Appointments */}
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
@@ -172,9 +169,7 @@ const Dashboard = () => {
             </Card>
           </div>
 
-          {/* Health Status & Notifications */}
           <div>
-            {/* Notifications Card */}
             <Card className="mb-6">
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -202,7 +197,6 @@ const Dashboard = () => {
               </CardFooter>
             </Card>
 
-            {/* Quick Links */}
             <Card>
               <CardHeader>
                 <CardTitle>Quick Links</CardTitle>
@@ -218,7 +212,7 @@ const Dashboard = () => {
                     View Medical History
                   </Button>
                   <Button variant="outline" className="w-full justify-start">
-                    <Vial className="h-4 w-4 mr-2" />
+                    <TestTube className="h-4 w-4 mr-2" />
                     Order Medicines
                   </Button>
                   <Button variant="outline" className="w-full justify-start">
@@ -235,7 +229,6 @@ const Dashboard = () => {
   );
 };
 
-// Helper function to get status color
 function getStatusColor(status: string): string {
   switch (status) {
     case 'confirmed':
